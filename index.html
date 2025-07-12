@@ -16,17 +16,6 @@
             font-family: 'Noto Sans TC', sans-serif;
         }
 
-        /* 強制懸停效果 */
-        .force-hover-effect {
-            /* 設定過渡動畫，確保動畫流暢 */
-            transition: transform 0.3s ease-in-out !important;
-        }
-
-        .force-hover-effect:hover {
-            /* 使用 !important 來確保此樣式優先級最高 */
-            transform: scale(1.05) !important;
-        }
-
         /* 彈出視窗的淡入淡出效果 */
         .modal-hidden {
             display: none;
@@ -48,8 +37,9 @@
         
         <div class="text-center w-full max-w-4xl">
             <!-- 主標題 -->
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2 tracking-wider">
-                推薦函建議內容
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+                校長推薦函
+                <span class="block text-3xl md:text-4xl font-bold text-gray-900 mt-2">王可靜建議內容</span>
             </h1>
             
             <!-- 副標題 -->
@@ -60,16 +50,18 @@
             <!-- 按鈕容器 -->
             <div class="flex flex-col items-center justify-center gap-4 w-full">
                 <!-- 瀏覽建議內容按鈕 -->
-                <button id="openModalBtn"
-                        class="force-hover-effect w-full max-w-xs bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-lg shadow-md">
-                    瀏覽學生建議內容
+                <button id="openModalBtn" class="group inline-block w-full max-w-xs transition-transform duration-300 ease-in-out hover:scale-105">
+                    <span class="block w-full bg-blue-600 group-hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg shadow-md transition-colors">
+                        瀏覽學生建議內容
+                    </span>
                 </button>
                 
                 <!-- 下載空白推薦函按鈕 (改為 a 標籤) -->
                 <!-- 注意：請將 href 的 '#' 替換為您實際的 '校長推薦函.docx' 檔案路徑 -->
-                <a href="#" download="校長推薦函.docx"
-                   class="force-hover-effect block w-full max-w-xs bg-blue-600 text-yellow-300 font-bold py-4 px-8 rounded-lg text-lg shadow-md text-center">
-                    下載建議推薦函
+                <a href="#" download="校長推薦函.docx" class="group inline-block w-full max-w-xs transition-transform duration-300 ease-in-out hover:scale-105">
+                    <span class="block w-full bg-blue-600 group-hover:bg-blue-700 text-yellow-300 font-bold py-4 px-8 rounded-lg text-lg shadow-md text-center transition-colors">
+                        下載建議推薦函
+                    </span>
                 </a>
             </div>
 
@@ -113,7 +105,7 @@
     </div>
 
     <script>
-        // 取得所有需要操作的 DOM 元素
+        // 取得所有需要操作的 DOM  元素
         const openModalBtn = document.getElementById('openModalBtn');
         const closeModalBtn = document.getElementById('closeModalBtn');
         const closeModalFooterBtn = document.getElementById('closeModalFooterBtn');
