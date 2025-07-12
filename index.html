@@ -3,76 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>校長推薦函建議內容</title>
+    <title>王可靜的學校推薦備審文件</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入 Google Fonts 的字體 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         /* 自定義樣式 */
         body {
-            font-family: 'Noto Sans TC', sans-serif;
-        }
-        .btn-golden {
-            transition: all 0.3s ease;
-        }
-        .btn-golden:hover {
-            box-shadow: 0 0 20px rgba(252, 211, 77, 0.5); /* 黃色光暈效果 */
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            /* 深色模式背景 */
+            background-color: rgb(17 24 39); 
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="flex items-center justify-center h-screen m-0 p-4">
 
     <!-- 主容器 -->
-    <div class="flex flex-col items-center justify-center min-h-screen p-6 bg-gradient-to-br from-gray-900 to-blue-900">
+    <div class="text-center p-8 bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-2xl shadow-fuchsia-500/10 max-w-4xl w-full">
         
-        <div class="text-center w-full max-w-4xl">
-            <!-- 主標題 -->
-            <h1 class="text-4xl md:text-5xl font-bold text-yellow-400 mb-2 tracking-wider">
-                推薦函建議內容
-            </h1>
+        <!-- 標題 -->
+        <h1 class="text-4xl md:text-6xl font-black tracking-wider text-cyan-400">
+            王可靜的學校推薦備審文件
+        </h1>
+        
+        <!-- 副標題 -->
+        <h2 class="mt-4 text-2xl md:text-3xl font-bold text-gray-300">
+            國立臺灣大學醫學系
+        </h2>
+        
+        <!-- 按鈕容器 (更新: flex-row 改為 flex-col) -->
+        <div class="mt-8 flex flex-col justify-center items-center gap-6">
             
-            <!-- 副標題 -->
-            <h2 class="text-2xl md:text-3xl font-medium text-blue-300 mb-12">
-                臺灣大學醫學系
-            </h2>
-
-            <!-- 按鈕容器 -->
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                <!-- 瀏覽建議內容按鈕 -->
-                <button 
-                    onclick="openFile('臺大醫學系-校長推薦函-王可靜版本.md')"
-                    class="btn-golden w-full md:w-auto bg-blue-700 hover:bg-blue-600 text-yellow-300 font-bold py-4 px-8 rounded-lg text-lg shadow-lg">
-                    瀏覽學生建議內容
-                </button>
-                
-                <!-- 空白推薦函按鈕 -->
-                <button 
-                    onclick="openFile('校長推薦函.docx')"
-                    class="btn-golden w-full md:w-auto bg-gray-900 hover:bg-gray-700 text-yellow-300 font-bold py-4 px-8 rounded-lg text-lg shadow-lg">
-                    下載建議推薦函 (WORD)
-                </button>
-            </div>
-
-            <!-- 圖片容器 -->
-            <div class="mt-12">
-                <img src="note.png" alt="下載檔案注意事項" class="w-[50%] mx-auto rounded-lg shadow-xl">
-            </div>
+            <!-- 上方按鈕：推薦函 (文字放大) -->
+            <a href="https://wangkejing2007.github.io/Recommended-Content/" target="_blank" rel="noopener noreferrer" 
+               class="inline-block w-full max-w-xs transition-transform duration-300 ease-in-out hover:scale-105">
+                <!-- 更新: text-xl 改為 text-2xl -->
+                <span class="block text-2xl font-bold text-white bg-fuchsia-700 px-6 py-3 rounded-lg">
+                    推薦函
+                </span>
+            </a>
+            
+            <!-- 下方按鈕：個人自述 (文字放大) -->
+            <a href="https://online.flippingbook.com/link/144671" target="_blank" rel="noopener noreferrer"
+               class="inline-block w-full max-w-xs transition-transform duration-300 ease-in-out hover:scale-105">
+               <!-- 更新: text-xl 改為 text-2xl -->
+               <span class="block text-2xl font-bold text-white bg-fuchsia-700 px-6 py-3 rounded-lg">
+                    個人自述
+               </span>
+            </a>
 
         </div>
 
-    </div>
+        <!-- 警示文字區塊 -->
+        <div class="mt-8 text-gray-400 text-sm leading-relaxed">
+            <p>請勿以任何下述形式</p>
+            <p>拷貝、擷取、複製、列印、轉發、分享</p>
+            <p>散播本備審文件內容</p>
+            <p class="mt-4 text-xs text-yellow-500">◎本網頁具Trackable limk可追蹤鏈接功能◎</p>
+        </div>
 
-    <script>
-        // JavaScript 函數，用於在新視窗中開啟文件
-        function openFile(fileName) {
-            // 這裡的檔名需要對應到您伺服器上的實際文件路徑
-            // 為了方便展示，我們假設文件與 HTML 檔案在同一個目錄下
-            window.open(fileName, '_blank');
-        }
-    </script>
+    </div>
 
 </body>
 </html>
