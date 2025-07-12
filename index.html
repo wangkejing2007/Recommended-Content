@@ -3,139 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>校長推薦函建議內容</title>
+    <title>校長推薦函</title>
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 Google Fonts 的字體 -->
+    <!-- 引入 Google Fonts 的 Inter 字體 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* 自定義樣式 */
+        /* 使用 Noto Sans TC 作為主要字體 */
         body {
-            font-family: 'Noto Sans TC', sans-serif;
-        }
-
-        /* 彈出視窗的淡入淡出效果 */
-        .modal-hidden {
-            display: none;
-            opacity: 0;
-        }
-        .modal-visible {
-            display: flex;
-            opacity: 1;
-        }
-        .modal-transition {
-            transition: opacity 0.3s ease-in-out;
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-    <!-- 主容器 -->
-    <div class="flex flex-col items-center justify-center min-h-screen p-6 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <!-- 主要容器 -->
+    <div class="w-full max-w-2xl mx-auto p-8 text-center">
         
-        <div class="text-center w-full max-w-4xl">
-            <!-- 主標題 -->
-            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+        <!-- 標題區 -->
+        <header class="mb-6">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-2">
                 校長推薦函
-                <span class="block text-3xl md:text-4xl font-bold text-gray-900 mt-2">王可靜建議內容</span>
             </h1>
-            
-            <!-- 副標題 -->
-            <h2 class="text-2xl md:text-3xl text-gray-700 mb-10">
-                《國立臺灣大學醫學系》
+            <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">
+                王可靜 建議內容
             </h2>
+            <h3 class="text-2xl md:text-3xl text-gray-500">
+                《國立臺灣大學醫學系》
+            </h3>
+        </header>
 
-            <!-- 按鈕容器 -->
-            <div class="flex flex-col items-center justify-center gap-4 w-full">
-                <!-- 瀏覽建議內容按鈕 -->
-                <button id="openModalBtn" class="group inline-block w-full max-w-xs transition-transform duration-300 ease-in-out hover:scale-105">
-                    <span class="block w-full bg-blue-600 group-hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg shadow-md transition-colors">
-                        瀏覽學生建議內容
-                    </span>
-                </button>
-                
-                <!-- 下載空白推薦函按鈕 (改為 a 標籤) -->
-                <!-- 注意：請將 href 的 '#' 替換為您實際的 '校長推薦函.docx' 檔案路徑 -->
-                <a href="#" download="校長推薦函.docx" class="group inline-block w-full max-w-xs transition-transform duration-300 ease-in-out hover:scale-105">
-                    <span class="block w-full bg-blue-600 group-hover:bg-blue-700 text-yellow-300 font-bold py-4 px-8 rounded-lg text-lg shadow-md text-center transition-colors">
-                        下載建議推薦函
-                    </span>
+        <!-- 按鈕區 -->
+        <main class="flex flex-col items-center space-y-6">
+            <!-- 按鈕一：瀏覽建議內容 -->
+            <a href="臺大醫學系-校長推薦函-王可靜版本.md" target="_blank" class="w-full md:w-3/4 lg:w-1/2 bg-blue-600 text-white font-semibold text-lg py-4 px-8 rounded-lg shadow-md hover:bg-blue-700 transform hover:scale-105 transition-transform duration-300 ease-in-out block">
+                瀏覽建議內容
+            </a>
+            
+            <!-- 第二個按鈕和連結的容器 -->
+            <div class="w-full md:w-3/4 lg:w-1/2">
+                <!-- 按鈕二：下載建議推薦函 -->
+                <a href="校長推薦函.docx" target="_blank" class="w-full bg-blue-600 text-white font-semibold text-lg py-4 px-8 rounded-lg shadow-md hover:bg-blue-700 transform hover:scale-105 transition-transform duration-300 ease-in-out block">
+                    下載建議推薦函
                 </a>
+                <!-- 新增的連結 -->
+                <p class="mt-2 text-right">
+                    <a href="note.png" target="_blank" class="text-sm text-red-700 font-bold underline">
+                        無法正常開啟?
+                    </a>
+                </p>
             </div>
+        </main>
 
-            <!-- 圖片容器已被移除 -->
-
-        </div>
     </div>
-
-    <!-- 彈出式視窗 (Modal) -->
-    <div id="recommendationModal" class="modal-hidden modal-transition fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-        <!-- 視窗內容 -->
-        <div class="bg-white text-gray-800 rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] flex flex-col">
-            <!-- 視窗標題 -->
-            <div class="flex justify-between items-center p-5 border-b border-gray-200">
-                <h3 class="text-2xl font-bold text-blue-700">學生提供之建議內容</h3>
-                <button id="closeModalBtn" class="text-gray-400 hover:text-gray-700 text-3xl font-bold">&times;</button>
-            </div>
-            <!-- 視窗內文 (可滾動) -->
-            <div class="p-6 overflow-y-auto space-y-4">
-                <h4 class="text-xl font-semibold text-blue-600">申請人：王可靜</h4>
-                <div>
-                    <h5 class="font-bold text-lg text-gray-800 mb-2">一、申請人特質與能力</h5>
-                    <p class="text-gray-600 leading-relaxed">可靜同學品學兼優，思想成熟，對自我有深刻的期許。在校期間，她不僅維持頂尖的學業成績，更積極參與跨領域的學習，展現其強烈的求知慾與廣闊的視野。她善於獨立思考，面對挑戰時總能冷靜分析，並提出具有創造性的解決方案。此外，她具備卓越的領導能力與同理心，在擔任班級幹部及社團社長期間，成功凝聚團隊共識，並能細心關懷夥伴，是師生眼中值得信賴的領導者。</p>
-                </div>
-                <div>
-                    <h5 class="font-bold text-lg text-gray-800 mb-2">二、醫學相關潛力與事蹟</h5>
-                    <p class="text-gray-600 leading-relaxed">可靜對生命科學與醫學領域抱持著高度熱忱。她利用課餘時間大量閱讀醫學倫理相關書籍，並主動參與本校與鄰近醫院合辦的「一日醫生體驗營」，從中深刻體會到醫者所需具備的專業與仁心。在生物科展中，她以「益生菌對人體免疫調節之影響」為題進行研究，不僅展現了紮實的科學研究能力，其研究成果更獲得了地區科展的優等獎。這些經歷都證明了她已具備未來從事醫療工作所需要的科學素養與人文關懷。</p>
-                </div>
-                <div>
-                    <h5 class="font-bold text-lg text-gray-800 mb-2">三、未來發展潛力</h5>
-                    <p class="text-gray-600 leading-relaxed">綜合而論，我認為王可靜同學是一位兼具智識、品德與熱忱的傑出學生。她對醫學的嚮往並非僅止於一份職業，而是源自於對生命的尊重與服務社會的使命感。我相信，以她的能力與決心，未來必能在醫學領域發光發熱，成為一位視病如親、貢獻卓越的良醫。因此，本人在此鄭重推薦，懇請 貴系給予她寶貴的機會。</p>
-                </div>
-            </div>
-             <!-- 視窗頁腳 -->
-            <div class="p-4 bg-gray-50 border-t border-gray-200 text-right rounded-b-lg">
-                <button id="closeModalFooterBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg">
-                    關閉
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // 取得所有需要操作的 DOM  元素
-        const openModalBtn = document.getElementById('openModalBtn');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const closeModalFooterBtn = document.getElementById('closeModalFooterBtn');
-        const recommendationModal = document.getElementById('recommendationModal');
-
-        // 開啟彈出視窗的函數
-        function openModal() {
-            recommendationModal.classList.remove('modal-hidden');
-            recommendationModal.classList.add('modal-visible');
-        }
-
-        // 關閉彈出視窗的函數
-        function closeModal() {
-            recommendationModal.classList.add('modal-hidden');
-            recommendationModal.classList.remove('modal-visible');
-        }
-
-        // 綁定事件監聽器
-        openModalBtn.addEventListener('click', openModal);
-        closeModalBtn.addEventListener('click', closeModal);
-        closeModalFooterBtn.addEventListener('click', closeModal);
-
-        // 點擊視窗外部區域也可以關閉
-        recommendationModal.addEventListener('click', function(event) {
-            // 檢查點擊的目標是否為 modal 本身 (即背景遮罩)
-            if (event.target === recommendationModal) {
-                closeModal();
-            }
-        });
-    </script>
 
 </body>
 </html>
