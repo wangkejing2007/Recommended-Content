@@ -147,7 +147,7 @@
                 let chatHistory = [];
                 chatHistory.push({ role: "user", parts: [{ text: prompt }] });
                 const payload = { contents: chatHistory };
-                const apiKey = ""; // API 金鑰將由 Canvas 環境提供
+                const apiKey = "AIzaSyAZWeIcJloxfAg5m5Kh1fOYbgHbt-CXCjQ"; // 已將您的 API 金鑰加入
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
                 
                 const response = await fetch(apiUrl, {
